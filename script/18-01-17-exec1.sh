@@ -1,0 +1,12 @@
+#!/usr/bin/env bash 
+echo "$# parameters"
+echo "$@"
+echo "$#$@"
+echo "$#@"
+echo "$!"
+echo "$$"
+echo "$%"
+echo "$^"
+echo "$&"
+echo "$*"
+echo "$(a)"

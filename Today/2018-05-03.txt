@@ -1,0 +1,39 @@
+beep v。发出哔哔声
+Here is a class with a method that sets up a ScheduledExecutorService to beep every ten seconds for an hour:
+
+address v. 处理
+Thread pools address two different problems
+
+提供改进的表现
+由于每个任务调用费用的减少
+提供一种bounding and managing资源的手段，包括在执行一系列任务时的线程和消耗。
+每个线程池也会记录一些基本的统计信息。
+they usually provide improved performance when executing large numbers of asynchronous tasks, due to reduced per-task invocation overhead, and they provide a means of bounding and managing the resources, including threads, consumed when executing a collection of tasks. Each ThreadPoolExecutor also maintains some basic statistics, such as the number of completed tasks.
+
+为最为常见场景进行预配置的设置
+preconfigure settings for the most common usage scenarios
+
+
+根据corePoolSize和maxmumPoolSize的边界设置来自动调整pool size
+A ThreadPoolExecutor will automatically adjust the pool size (see getPoolSize) according to the bounds set by corePoolSize (see getCorePoolSize) and maximumPoolSize (see getMaximumPoolSize).
+
+idle 闲置的 懒惰的 虚度的 空转的
+
+accommodate 容纳
+arbitrary 随意的 任意的 武断的 专制的
+you allow the pool to accommodate an arbitrary number of concurrent tasks
+
+possess 拥有
+process 处理 加工， 过程 程序， 队列前行
+
+degrad 降级
+Threads should possess the "modifyThread" RuntimePermission. If worker threads or other threads using the pool do not possess this permission, service may be degraded
+
+excess 超额 过度，额外的
+
+terminate 使终结，使结束
+termination 结束，终止
+terminal 终点，末端，终端，极限；末端的，晚期的
+
+transition 过渡，转变，转换
+transient 短暂的，路过的

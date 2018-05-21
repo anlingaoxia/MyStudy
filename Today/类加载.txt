@@ -1,0 +1,6 @@
+Java源码文件（*.java）→编译→class文件→JVM
+
+获取类对象：
+Class<?> clz = getClass();
+Class<?> clz = obj.getClass();
+Class<?> clz = *.class
