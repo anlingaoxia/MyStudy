@@ -74,16 +74,40 @@ echo "${content}" > *.txt
 echo "${content}" >> *.txt
 ```
 
-## 数组和关联数组
+## 数组
 * 定义数组
-> 1. arr=(0 1 2 3)
-> 2. arr[0]=0;
->    arr[1]=1
->    arr[2]=2
->    arr[3]=3
+```
+1. arr=(0 1 2 3)
+2. arr[0]=0;
+   arr[1]=1
+   arr[2]=2
+   arr[3]=3
+```
 
 * 打印数组元素和数组
-> echo \$arr[0] //打印数组元素
-> echo \$arr[*] //打印数组
+```
+echo \${arr[0]} //打印数组元素
+echo \${arr[*]} //打印数组
+```
 
 * 显示数组长度
+`echo ${#arr[*]}`
+
+##关联数组
+* 定义关联数组
+`declare -A assArr`
+
+* 关联数组赋值
+1. `assArr=([${key1}]=${val1} [${key2}]=${val2})`
+2. `assArr[${key}]=${val}`
+
+* 打印关联数组
+`echo ${assArr[${key}]}`
+
+* 列出数组索引
+`echo ${!assArr[*]}`
+`echo ${!assArr[@]}`
+
+##别名
+
+

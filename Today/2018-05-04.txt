@@ -1,2 +1,0 @@
-refactor v. 重构
-instantiate v. 示例，举例说明

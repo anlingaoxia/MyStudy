@@ -1,8 +1,0 @@
-retrieve v. 检索
-
-synchronous adj. 同步的
-asynchronous adj. 异步的
-
-A Future represents the result of an asynchronous computation
-
-mechanics n. 力学，结构，技术。
