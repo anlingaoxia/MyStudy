@@ -1,0 +1,13 @@
+Shell原理.md
+Shell命令.md
+bash-4.2.tar.gz
+bash.sh
+chuancan.sh
+dir.txt
+dirVar
+echo.txt
+err.txt
+new clone.sh
+out.txt
+script-1.sh
+script.sh
