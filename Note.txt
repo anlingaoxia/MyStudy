@@ -1,0 +1,11 @@
+BinarySearch:
+使用end = mid - 1和start = mid +　１时，判断条件为start <= end
+2->right target == start
+2->1	 target > start -> (1)
+2->0	 target < start	-> (start不变，end < start)
+
+1->right target == start
+1->0	 target < start -> (start不变，end < start)
+1->0	 target > start -> (start++，end不变)
+
+
