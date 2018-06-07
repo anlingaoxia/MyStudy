@@ -1,0 +1,129 @@
+303. Range Sum Query - Immutable
+给定一个整型数组,找到在下标i和j(包含)之间的所有的数的和.
+    public int[] sums;
+    public int[] nums;
+    public NumArray(int[] nums) {
+        this.nums = nums;
+        sums = new int[nums.length];
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            sums[i] = sum;
+        }
+    }
+
+    public int sumRange(int i, int j) {
+        return sums[j] - sums[i] + nums[i];
+    }
+
+=====
+53. Maximum Subarray
+找到数组的子数组的最大和.
+    public int maxSubArray(int[] nums) {
+        int max = nums[0];
+        int thisSum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            thisSum += nums[i];
+            if (thisSum > max) {
+                max = thisSum;
+            }
+            if (thisSum < 0) {
+                thisSum = 0;
+            }
+        }
+        return max;
+    }
+
+=====
+198. House Robber
+如果相邻的两个房子同时被抢就会报警.
+给出一个非负数的整数表，代表每个房子的钱数，确定今晚你可以抢劫的最大金额而不报警。
+    public int rob(int[] nums) {
+        int maxRob = 0;
+        int maxNotRob = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int tMaxRob = maxNotRob + nums[i];
+            int tMaxNotRob = Math.max(maxRob, maxNotRob);
+            maxRob = tMaxRob;
+            maxNotRob = tMaxNotRob;
+        }
+        return maxRob > maxNotRob ? maxRob : maxNotRob;
+    }
+=====
+121. Best Time to Buy and Sell Stock
+一个数组,第i个元素表示第i天的股票价格.
+只允许一次交易,求最大的利润.
+    public int maxProfit(int[] prices) {
+        if (prices.length < 2) return 0;
+        int min = prices[0];
+        int max = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < min) {
+                min = prices[i];
+            }
+            if (prices[i] - min > max) {
+                max = prices[i] - min;
+            }
+        }
+        return max;
+    }
+
+=====
+70. Climbing Stairs
+一次只允许跳1个或2个台阶,共有多少种跳法跳上n阶台阶.
+    public int climbStairs(int n) {
+	if (n < 1) return 0;
+        if (n == 1) return 1;
+        if (n == 2) return 2;
+        int n_2 = 1;
+        int n_1 = 2;
+        int n_0 = 0;
+        for (int i = 1; i <= n - 2; i++) {
+            n_0 = n_1 + n_2;
+            n_2 = n_1;
+            n_1 = n_0;
+        }
+        return n_0;
+    }
+=====
+646. Maximum Length of Pair Chain
+给定n对数字,每一对的第一个数字都比第二个数字要大.
+如果(c,d)在(a,b)之后当且仅当b < c,给定一个对数字的集合,找出最大的链条.
+    public int findLongestChain(int[][] pairs) {
+        Arrays.sort(pairs, Comparator.comparingInt(a -> a[1]));
+        int p = 0;
+        int sum = 0;
+        while (p < pairs.length) {
+            sum++;
+            int now = p;
+            while (p < pairs.length - 1 && pairs[p + 1][0] <= pairs[now][1]) {
+                p++;
+            }
+            p++;
+        }
+        return sum;
+    }
+=====
+322. Coin Change
+有不同面额的硬币和一个金额,计算用最少的硬币数来使得总额和金额相等,如果没有办法,返回-1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

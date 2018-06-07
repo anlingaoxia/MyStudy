@@ -1,0 +1,199 @@
+66. Plus One
+数组最后一位+1
+    public int[] plusOne(int[] digits) {
+        boolean plus = true;
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (plus ) {
+                if (++digits[i] > 9) {
+                    digits[i] = 0;
+                } else plus = false;
+            } 
+            if (!plus) break;
+        }
+        
+        if (plus) {
+            int[] newPlus = new int[digits.length + 1];
+            newPlus[0] = 1;
+            return newPlus;
+        } 
+        return digits;
+    }
+
+=====
+119. Pascal's Triangle II
+输出第k行杨辉三角
+    public static List<Integer> getRow(int rowIndex) {
+        Integer[] row = new Integer[rowIndex + 1];
+        Arrays.fill(row, 0);
+        row[0] = 1;
+        for (int i = 1; i < row.length; i++) {
+            for (int j = i; j >= 1; j--) {
+                row[j] += row[j - 1];
+            }
+        }
+        return Arrays.asList(row);
+    }
+=====
+561. Array Partition I
+给2n个integers,group这些integers到n对，使得这n对的min(a,b)最大
+    public int arrayPairSum(int[] nums) {
+        Arrays.sort(nums);
+        int result = 0;
+        for (int i = 0; i < nums.length; i += 2) {
+            result += nums[i];
+        }
+        return result;
+    }
+
+=====
+1. Two Sum
+给一个整形数组，一个target，返回加起来等于target的元素的下标
+使用hashmap保存之前的需要对比的数。
+public int[] twoSum(int[] numbers, int target) {
+    int[] result = new int[2];
+    Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    for (int i = 0; i < numbers.length; i++) {
+        if (map.containsKey(target - numbers[i])) {
+            result[1] = i + 1;
+            result[0] = map.get(target - numbers[i]);
+            return result;
+        }
+        map.put(numbers[i], i + 1);
+    }
+    return result;
+}
+=====
+448. Find All Numbers Disappeared in an Array
+给定一个大小为n的整形数组1<=a[i]<=n,一些出现两次，一些出现一次，在数组中找出所有没有出现过的的[1,n]的元素
+使用负数进行标注可以进行顺序判断。
+使用0、-1进行标注，则下一个被判断的下标必须为被标注的数组元素的值。
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> ret = new ArrayList<Integer>();
+        for(int i = 0; i < nums.length; i++) {
+            int val = Math.abs(nums[i]) - 1;
+            if(nums[val] > 0) {
+                nums[val] = -nums[val];
+            }
+        }
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] > 0) {
+                ret.add(i+1);
+            }
+        }
+        return ret;
+    }
+=====
+167. Two Sum II - Input array is sorted
+给定一个已经按升序排列的整形数组，找到两个加起来等于target的数。返回这两个数的数组下标，index1必须小于index2.
+    public int[] twoSum(int[] numbers, int target) {
+        int index1 = 0;
+        int index2 = numbers.length - 1;
+        while (index1 < index2) {
+            int sum = numbers[index1] + numbers[index2];
+            if (sum == target) break;
+            else if (sum > target) {
+                index2--;
+            } else if (sum < target) {
+                index1++;
+            }
+        }
+
+        return new int[] { index1 + 1, index2 + 1 };
+    }
+
+=====
+26. Remove Duplicates from Sorted Array
+给定一个大小为n的已排序数组，删除重复的地方，使每个元素只出现一次，并返回新的长度。
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int last = nums[0];
+        int duplicate = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != last) {
+                nums[duplicate] = nums[i];
+                last = nums[i];
+                duplicate++;
+            }
+        }
+        return duplicate;
+    }
+   public static int removeDuplicates2(int[] A) {
+        if (A.length==0) return 0;
+        int j=0;
+        for (int i=0; i<A.length; i++)
+            if (A[i]!=A[j]) A[++j]=A[i];
+        return ++j;
+    }
+
+=====
+27. Remove Element
+给定一个数组和一个值，删除该值的所有实例，并返回新的长度
+    public int removeElement(int[] nums, int val) {
+        int duplicate = 0;
+        for (int i = 0; i < nums.length; i++) {
+             if (nums[i] != val) {
+                 nums[duplicate] = nums[i];
+                 duplicate++;
+             }
+        }
+        return duplicate;
+    }
+
+=====
+169. Majority Element
+给定一个大小为n的数组，找到出现大于[n/2]次数的元素。
+    public int majorityElement(int[] nums) {
+        int k = sort(nums, 0, nums.length - 1, (nums.length - 1) / 2);
+        while (nums[nums.length / 2] != nums[k]) {
+            k = sort(nums, 0, nums.length - 1, (nums.length - 1) / 2);
+        }
+        return nums[k];
+    }
+
+    public int sort(int[] nums, int i, int j, int k) {
+        int key = nums[k];
+        nums[k] = nums[i];
+        nums[i] = key;
+        while (i < j) {
+            while (i < j && nums[j] >= key)
+                j--;
+            if (i < j) nums[i++] = nums[j];
+            while (i < j && nums[i] < key)
+                i++;
+            if (i < j) nums[j--] = nums[i];
+        }
+        nums[i] = key;
+        return i;
+    }
+
+===
+    public int majorityElement(int[] nums) {
+        int major = nums[0];
+        int count = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == major) count++;
+            else if (nums[i] != major) {
+                if(count == 0) {
+                    major = nums[i];
+                    count++;
+                } else {
+                    count--;
+                }
+            }
+        }
+        return major;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
