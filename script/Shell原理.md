@@ -214,10 +214,76 @@ type命令
 7. 函数可以递归调用，而且没有调用限制
 8. declare -f找出登录会话中定义的函数，函数会按照字母顺序打印函数定义
 
-test命令评估 expression的值
+test命令评估expression的值
 
-##PROBLEMS
-- 路径的写法
-对路径变量的判断不能使用''和""否则会识别不出（如-e -f -d等）（直接使用字符串判定的除外）
+与或非
+exp1 && exp2
+exp1 || exp2
+! exp
+
+##字符串和数字比较
+str1 = str2
+str1 != str2
+str1 > str2
+str1 < str2
+-n str //str非null，长度大于0
+-z str //str为null，长度为0
+
+-eq //等于
+-ne //不等于
+-gt //大于
+-lt //小于
+-ge //大于等于
+-le //小于等于
+
+##文件属性检查
+-d file //目录
+-e file //file存在
+
+##case语句
+case exp in
+    pattern1)
+        statements;;
+    pattern2)
+        statements;;
+    ...
+esac
+```
+case $p in
+	"1")
+		echo "value is 1";;
+	"2")
+		echo "value is 2";;
+	"3")
+		echo "value is 3";;
+	*)
+		echo "value is null";;
+esac
+```
+
+##for语句
+for in
+等同于
+for in "$@"
+
+##while/until循环
+```
+while condition
+do
+    statements
+done
+
+until condition
+do
+    statements
+done
+```
+
+
+
+
+
+
+
 
 
