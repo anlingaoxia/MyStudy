@@ -222,19 +222,21 @@ exp1 || exp2
 ! exp
 
 ##字符串和数字比较
+###字符串比较
 str1 = str2
 str1 != str2
 str1 > str2
 str1 < str2
 -n str //str非null，长度大于0
 -z str //str为null，长度为0
-
+###数字比较
 -eq //等于
 -ne //不等于
 -gt //大于
 -lt //小于
 -ge //大于等于
 -le //小于等于
+</<=/>/>= 都需要双括号:(( "$a" > "$b" ))
 
 ##文件属性检查
 -d file //目录
