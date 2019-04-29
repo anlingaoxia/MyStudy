@@ -1,0 +1,305 @@
+{
+    "banklist_page": {
+        "page_title": "选择支付方式",
+        "page_tip": "更多优惠",
+        "page_subtitle": "",
+        "labels": [],
+        "banklist": [
+            {
+                "pay_type": "quickbank",
+                "paytype_id": "157",
+                "bank_type": "debit_ccb",
+                "bank_type_id": 35,
+                "card_type": "debit",
+                "character": "zhongguojianshe",
+                "icon": {
+                    "enable": "https://img.meituan.net/pay/cbc_g4.png",
+                    "disable": "https://img.meituan.net/pay/dis_cbc_g2.png"
+                },
+                "name": "中国建设银行储蓄卡",
+                "ishot": true,
+                "exceed_desc": "超出该卡最大支付限额（¥10000/笔）",
+                "amount": 10000,
+                "status": 0,
+                "status_info": "",
+                "use_cashticket": true,
+                "card_info": {
+                    "bank_card": "131795568",
+                    "name_ext": "(8893)",
+                    "tailno": "8893"
+                },
+                "limit_type": "order",
+                "submit_url": "/qdbpay/bindpay"
+            },
+            {
+                "pay_type": "quickbank",
+                "paytype_id": "166",
+                "bank_type": "credit_icbc",
+                "bank_type_id": 21,
+                "card_type": "credit",
+                "character": "zhongguogongshang",
+                "icon": {
+                    "enable": "https://img.meituan.net/pay/icbc_g4.png",
+                    "disable": "https://img.meituan.net/pay/dis_icbc_g2.png"
+                },
+                "name": "中国工商银行信用卡",
+                "ishot": true,
+                "exceed_desc": "超出该卡最大支付限额（¥10000/笔）",
+                "amount": 10000,
+                "status": 0,
+                "status_info": "",
+                "use_cashticket": true,
+                "card_info": {
+                    "bank_card": "131795593",
+                    "name_ext": "(1752)",
+                    "tailno": "1752"
+                },
+                "limit_type": "order",
+                "submit_url": "/qdbpay/bindpay"
+            },
+            {
+                "pay_type": "bankselectpay",
+                "paytype_id": "231",
+                "bank_type": "credit_cmbc",
+                "bank_type_id": 28,
+                "card_type": "credit",
+                "character": "zhongguominsheng",
+                "icon": {
+                    "enable": "https://img.meituan.net/pay/84db77d2d25277a2382689c22b69d055351.png",
+                    "disable": "https://img.meituan.net/pay/9488673590fde9f6d68f33da2a7e6550319.png"
+                },
+                "name": "中国民生银行信用卡",
+                "ishot": true,
+                "exceed_desc": "超出最大支付限额（¥20000/笔）",
+                "amount": 20000,
+                "singleLimit": 20000,
+                "dailyLimit": 20000,
+                "status": 0,
+                "status_info": "",
+                "use_cashticket": true,
+                "discounts": {
+                    "no_balance": {
+                        "reduce": 0,
+                        "shift_paytype_warn": 0,
+                        "cashticket_code": "",
+                        "campaign_id": "[981]"
+                    },
+                    "use_balance": {
+                        "reduce": 0,
+                        "shift_paytype_warn": 0,
+                        "cashticket_code": "",
+                        "campaign_id": "[981]"
+                    }
+                },
+                "labels": [
+                    {
+                        "label_head": "减",
+                        "background_color": "#FF8283",
+                        "color": "#FF8283",
+                        "top": false,
+                        "use_customization": false,
+                        "content_color": "#FFFFFF",
+                        "discount": 1,
+                        "style": 1,
+                        "type": 2,
+                        "content": "梯度",
+                        "label_id": "981",
+                        "seq": 1
+                    }
+                ],
+                "submit_url": "/qdbsign/sign"
+            },
+            {
+                "pay_type": "balancepay",
+                "status": 4,
+                "amount": 999999,
+                "balance": 0,
+                "paytype_id": "255",
+                "status_info": "余额不足",
+                "exceed_desc": "余额不足",
+                "name": "余额（剩余¥0.00）",
+                "icon": {
+                    "enable": "https://p1.meituan.net/pay/balance2x_enable.png",
+                    "disable": "https://p0.meituan.net/pay/balance2x_disable_1.png"
+                },
+                "card_info": {
+                    "name_ext": ""
+                },
+                "submit_url": "/qdbpay/balancepay"
+            },
+            {
+                "pay_type": "cardpay",
+                "status": 0,
+                "status_info": "支持储蓄卡信用卡，无需开通网银",
+                "amount": 50000,
+                "use_cashticket": true,
+                "selected": false,
+                "exceed_desc": "超出最大支付限额（¥50000/笔）",
+                "name": "使用新卡支付",
+                "icon": {
+                    "enable": "https://img.meituan.net/pay/84db77d2d25277a2382689c22b69d055351.png",
+                    "disable": "https://img.meituan.net/pay/9488673590fde9f6d68f33da2a7e6550319.png"
+                },
+                "submit_url": "/qdbsign/sign"
+            },
+            {
+                "pay_type": "newforeigncardpay",
+                "status": 0,
+                "status_info": "",
+                "amount": 10000,
+                "use_cashticket": true,
+                "selected": false,
+                "exceed_desc": "超出最大支付限额（¥10000/笔）",
+                "name": "添加国际卡",
+                "icon": {
+                    "enable": "https://img.meituan.net/pay/84db77d2d25277a2382689c22b69d055351.png",
+                    "disable": "https://img.meituan.net/pay/9488673590fde9f6d68f33da2a7e6550319.png"
+                },
+                "submit_url": "/mtxpay/cardpage"
+            }
+        ],
+        "more_banklist": [
+            {
+                "association_pay_type": "bankselectpay",
+                "list": [
+                    {
+                        "pay_type": "bankselectpay",
+                        "paytype_id": "231",
+                        "bank_type": "debit_icbc",
+                        "bank_type_id": 36,
+                        "card_type": "debit",
+                        "character": "zhongguogongshang",
+                        "icon": {
+                            "enable": "https://img.meituan.net/pay/conch_meituan_plus_icon.png",
+                            "disable": "https://img.meituan.net/pay/conch_meituan_plus_icon.png"
+                        },
+                        "name": "中国工商银行储蓄卡",
+                        "ishot": true,
+                        "exceed_desc": "超出最大支付限额（¥50000/笔）",
+                        "amount": 50000,
+                        "singleLimit": 50000,
+                        "dailyLimit": 50000,
+                        "status": 0,
+                        "status_info": "",
+                        "use_cashticket": true,
+                        "discounts": {
+                            "no_balance": {
+                                "campaign_id": "[588,485]",
+                                "cashticket_code": "",
+                                "reduce": 0,
+                                "shift_paytype_warn": 0
+                            },
+                            "use_balance": {
+                                "campaign_id": "",
+                                "cashticket_code": "",
+                                "reduce": 0,
+                                "shift_paytype_warn": 0
+                            }
+                        },
+                        "labels": [
+                            {
+                                "background_color": "#FF8283",
+                                "color": "#FF8283",
+                                "content": "lvyy",
+                                "content_color": "#FFFFFF",
+                                "label_head": "减",
+                                "seq": 1,
+                                "style": 1,
+                                "top": false,
+                                "type": 2
+                            },
+                            {
+                                "background_color": "#FF8283",
+                                "color": "#FF8283",
+                                "content": "抽现金红包,最高888",
+                                "content_color": "#FFFFFF",
+                                "seq": 2,
+                                "style": 1,
+                                "top": true,
+                                "type": 1
+                            }
+                        ],
+                        "submit_url": "/qdbsign/startsignpay"
+                    },
+                    {
+                        "pay_type": "bankselectpay",
+                        "paytype_id": "232",
+                        "bank_type": "debit_icbc",
+                        "bank_type_id": 36,
+                        "card_type": "debit",
+                        "character": "zhongguogongshang",
+                        "icon": {
+                            "enable": "https://img.meituan.net/pay/conch_meituan_plus_icon.png",
+                            "disable": "https://img.meituan.net/pay/conch_meituan_plus_icon.png"
+                        },
+                        "name": "中国工商银行储蓄卡",
+                        "ishot": true,
+                        "exceed_desc": "超出最大支付限额（¥50000/笔）",
+                        "amount": 50000,
+                        "singleLimit": 50000,
+                        "dailyLimit": 50000,
+                        "status": 0,
+                        "status_info": "",
+                        "use_cashticket": true,
+                        "discounts": {
+                            "no_balance": {
+                                "campaign_id": "[588,485]",
+                                "cashticket_code": "",
+                                "reduce": 0,
+                                "shift_paytype_warn": 0
+                            },
+                            "use_balance": {
+                                "campaign_id": "",
+                                "cashticket_code": "",
+                                "reduce": 0,
+                                "shift_paytype_warn": 0
+                            }
+                        },
+                        "labels": [
+                            {
+                                "background_color": "#FF8283",
+                                "color": "#FF8283",
+                                "content": "lvyy",
+                                "content_color": "#FFFFFF",
+                                "label_head": "减",
+                                "seq": 1,
+                                "style": 1,
+                                "top": false,
+                                "type": 2
+                            },
+                            {
+                                "background_color": "#FF8283",
+                                "color": "#FF8283",
+                                "content": "抽现金红包,最高888",
+                                "content_color": "#FFFFFF",
+                                "seq": 2,
+                                "style": 1,
+                                "top": true,
+                                "type": 1
+                            }
+                        ],
+                        "submit_url": "/qdbsign/startsignpay"
+                    }
+                ]
+            }
+        ]
+      "all_bindcard_exceed_status": false,
+        "shift_paytype_blacklist": [
+            "wxpay",
+            "wxwappay",
+            "applepay",
+            "wxjspay"
+        ],
+        "toplabels": [],
+        "presentation": "国内银行卡支付享",
+        "status": 0,
+        "use_np_pay": false,
+        "bindcard_unavailable_desc": "所有已绑定银行卡暂不可用",
+        "shift_paytype_tips": {
+            "title": "",
+            "content": "确认放弃美团支付专享优惠活动?",
+            "left_button": "放弃优惠",
+            "right_button": "使用优惠"
+        }
+    }
+}

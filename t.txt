@@ -1,1 +1,14 @@
-123qwe
+credit_info: {
+                    usable_amount: 0,
+                    is_display: false,
+                    checkbox_status: 2,
+                    description: "",
+                    not_selected_tip: "我的余额",
+                    selected_tip: "使用余额",
+                    my_balance_tip: "我的余额",
+                    using_amount_tip: "本单使用余额￥",
+                    icon: {
+                        enable: "https://p1.meituan.net/pay/mpay_icon_common_balance_v1.png",
+                        disable: "https://p1.meituan.net/pay/mpay_icon_common_balance_disable_v1.png"
+                    }
+                }
